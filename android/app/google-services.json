@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "866425616399",
+    "project_id": "kp-project-1d99f",
+    "storage_bucket": "kp-project-1d99f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866425616399:android:8375333576e57aca5b8b7a",
+        "android_client_info": {
+          "package_name": "com.example.pendataanrumahsakit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866425616399-msn4vrqkrskk0vcdmm24nkbb8nla1k9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB027Zb5pWToPeTgUq-4bcxdZFFNbfkB_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866425616399-msn4vrqkrskk0vcdmm24nkbb8nla1k9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
