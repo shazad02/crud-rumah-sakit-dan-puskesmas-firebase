@@ -15,13 +15,14 @@ class _TambahRumahState extends State<TambahRumah> {
   final controllerAlamat = TextEditingController();
   final controllerjmldc = TextEditingController();
   final controllerjmlkt = TextEditingController();
+  final controllermaplks = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Tambah Rumah Sakit'),
+        title: Text('Tambah Rumah Sakit2'),
         backgroundColor: Color.fromARGB(255, 87, 155, 177),
       ),
       body: ListView(
@@ -65,6 +66,15 @@ class _TambahRumahState extends State<TambahRumah> {
             ),
           ),
           SizedBox(height: 24),
+          TextField(
+            controller: controllermaplks,
+            decoration: InputDecoration(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+              labelText: 'Link Alamat',
+            ),
+          ),
+          SizedBox(height: 24),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 44, 116, 179),
@@ -78,6 +88,7 @@ class _TambahRumahState extends State<TambahRumah> {
                 alamat: controllerAlamat.text,
                 jumlahdc: int.parse(controllerjmldc.text),
                 jumlahkuota: int.parse(controllerjmlkt.text),
+                maplks: controllermaplks.text,
               );
               createRumah(rmskt);
               Navigator.pop(context);

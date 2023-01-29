@@ -4,6 +4,7 @@ class RmSkt {
   late final String alamat;
   late final int jumlahdc;
   late final int jumlahkuota;
+  late final String maplks;
 
   RmSkt({
     this.id = '',
@@ -11,6 +12,7 @@ class RmSkt {
     required this.alamat,
     required this.jumlahdc,
     required this.jumlahkuota,
+    required this.maplks,
   });
 
   Map<String, dynamic> toJson() => {
@@ -19,6 +21,7 @@ class RmSkt {
         'alamat': alamat,
         'jumlahdc': jumlahdc,
         'jumlahkuota': jumlahkuota,
+        'maplks': maplks,
       };
   static RmSkt fromJson(Map<String, dynamic> json) => RmSkt(
         id: json['id'],
@@ -26,5 +29,6 @@ class RmSkt {
         alamat: json['alamat'],
         jumlahdc: json['jumlahdc'],
         jumlahkuota: json['jumlahkuota'],
+        maplks: json['maplks'],
       );
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pendataanrumahsakit/screen/tambah2.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Rumah2Screen extends StatefulWidget {
   Rumah2Screen({Key? key}) : super(key: key);
@@ -10,6 +11,17 @@ class Rumah2Screen extends StatefulWidget {
 }
 
 class _Rumah2ScreenState extends State<Rumah2Screen> {
+  Future<void> _launchURL(String url) async {
+    final Uri uri = Uri(
+        scheme: "https", host: "maps.google.com", path: "/maps/search/$url");
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw "Tidak Bisa Berjalan Aplikasinya";
+    }
+  }
+
   final CollectionReference _rm =
       FirebaseFirestore.instance.collection('rumahsakits');
 
@@ -258,7 +270,7 @@ class _Rumah2ScreenState extends State<Rumah2Screen> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 2,
                           ),
                           Row(
@@ -289,6 +301,12 @@ class _Rumah2ScreenState extends State<Rumah2Screen> {
                               ),
                             ],
                           ),
+                          TextButton(
+                              onPressed: () {
+                                _launchURL(
+                                    "https://www.google.co.id/maps/place/RSU+Metro+Medical+Center/@5.1773536,97.1294386,16.12z/data=!4m5!3m4!1s0x30478322d3875351:0xc9a96a6afad235b!8m2!3d5.1743236!4d97.129447");
+                              },
+                              child: const Text('Cek In Google Maps'))
                         ],
                       ),
                       trailing: SizedBox(
